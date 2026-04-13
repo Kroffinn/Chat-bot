@@ -4,7 +4,10 @@ const express = require('express');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 app.use(express.json());
 const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.API_KEY;
